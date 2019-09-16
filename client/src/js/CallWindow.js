@@ -3,7 +3,7 @@ import PropTypes from 'proptypes';
 import classnames from 'classnames';
 import _ from 'lodash';
 import  endcall  from './app.js';
-import db from 'connectDB';
+
 
  var endTime = new Date().setTime(1362009600000);
 var currentTime = new Date().getTime();
@@ -16,15 +16,6 @@ var secs = Math.floor(remainingTime/1000);
 //var recorder = new RecordRTC_Extension(); 
 var blobs = [];
 var recorder;
-
-
-
-var test_connection = db.connection.query('SELECT * FROM `user`', function (error, results, fields) {
-  console.log(results);
-});
-
-
-
 class CallWindow extends Component {
   constructor(props) {
      
