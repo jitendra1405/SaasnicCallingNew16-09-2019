@@ -27,7 +27,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false })); 
+
+app.use(express.static(__dirname + '/public'));
+
+app.use(bodyParser.urlencoded({
+   extended: false
+}));
 
 app.use(bodyParser.json());
 
@@ -38,13 +43,12 @@ app.get('/', function(req, res){
  res.sendFile("index.html"); //if html file is within public directory
 });
 
-
-
-
-app.post('/example', (req, res) => {
-  res.send(`Full name is:${req.body.fname} ${req.body.lname}.`);
+app.post('/',function(req,res){
+   var username = req.body.username;
+   var htmlData = 'Hello:' + username;
+   res.send(htmlData);
+   console.log(htmlData);
 });
-
 
 
 var mysql = require('mysql');  
