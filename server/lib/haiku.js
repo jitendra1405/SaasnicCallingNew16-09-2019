@@ -30,7 +30,7 @@ app.get('/myform', function(req, res){
   console.log('aaaaaaaaaaaaaaaaadddddddddddddddddd',myText);
     res.send('Your Text:' +myText); 
 }); 
-app.listen(config.PORT);
+
 
 
 
