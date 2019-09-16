@@ -23,14 +23,15 @@ const nouns = [
 ];
 var someVar = [];
 
-var express = require("express");
-var app = express();
- 
-app.post('/index', function(req,res){
-	let inputContent = req.body.textField;
-	console.log(inputContent);
-});
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true })); 
+
+app.post('/example', (req, res) => {
+  res.send(`Full name is:${req.body.fname} ${req.body.lname}.`);
+});
 
 
 
