@@ -16,11 +16,6 @@ var secs = Math.floor(remainingTime/1000);
 var blobs = [];
 var recorder;
 
-var db = require('./connect');//removed the parameter
-//use db variable to process queries as returned from the above require statement.
-var test_connection = db.connection.query('SELECT * FROM `user`', function (error, results, fields) {
-  console.log(results);
-});
 
 
 
