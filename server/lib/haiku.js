@@ -23,45 +23,7 @@ const nouns = [
 ];
 var someVar = [];
 
-var express = require('express')
-var http = require('http');
-var math = require('mathjs');
-var bodyParser = require('body-parser');
 
-var app = express()
-
-// use body parser to easy fetch post body
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json())
-
-// route to '/' to return the html file
-app.get('/', function (req, res, next) {
-  res.sendfile('index.html');
-});
-
-//route that receives the post body and returns your computation
-app.post('/solve', function (req, res, next) {
-  pleaseSolve(req.body, res);
-});
-
-app.listen(8080);
-
-function pleaseSolve(parms, res) {
-  //get the parameters based on input name attribute from the html
-  //and parse strings to numbers
-  var m = +parms.param1;
-  var o = +parms.param2;
-  var p = +parms.param3;
-
-  var comp = math.chain(m)
-    .add(m)
-    .divide(p)
-    .multiply(o)
-    .done();
-
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.end("The answer is " + comp);
-}
 
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
