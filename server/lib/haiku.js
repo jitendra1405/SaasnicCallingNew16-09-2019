@@ -26,7 +26,7 @@ var someVar = [];
 var express = require("express");
 var app = express();
  
-app.post('/route', function(req,res){
+app.post('/index', function(req,res){
 	let inputContent = req.body.textField;
 	console.log(inputContent);
 });
