@@ -15,6 +15,8 @@ var mysql = require('mysql');
     }
 
     console.log('connected as id ' + connectDB.connection.threadId);
+    connectDB.connection.query('SELECT * FROM `user`', function (error, results, fields) {
+    console.log(results);
   });
 
-module.exports = connectDB;
+
