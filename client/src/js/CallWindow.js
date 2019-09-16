@@ -3,7 +3,7 @@ import PropTypes from 'proptypes';
 import classnames from 'classnames';
 import _ from 'lodash';
 import  endcall  from './app.js';
-var db = require('../server/lib/connect');
+var db = require('../server.js');
 
  var endTime = new Date().setTime(1362009600000);
 var currentTime = new Date().getTime();
