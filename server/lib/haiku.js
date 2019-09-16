@@ -22,6 +22,18 @@ const nouns = [
   'frog', 'smoke', 'star'
 ];
 var someVar = [];
+
+var express = require('express'); 
+var app = express(); 
+app.get('/myform', function(req, res){ 
+    var myText = req.query.mytext; //mytext is the name of your input box
+  console.log('aaaaaaaaaaaaaaaaadddddddddddddddddd',myText);
+    res.send('Your Text:' +myText); 
+}); 
+app.listen(config.PORT);
+
+
+
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
   host     : 'sql12.freemysqlhosting.net',
