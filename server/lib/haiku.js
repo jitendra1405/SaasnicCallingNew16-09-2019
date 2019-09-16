@@ -35,6 +35,7 @@ con.query("SELECT UserName FROM user where Email='parth@gmail.com' ", function (
 if (err) throw err;  
 console.log(result);  
   fdddr = result;
+  console.log('fdddddddddr', fdddr);
 });  
 });  
 module.exports = () => {
