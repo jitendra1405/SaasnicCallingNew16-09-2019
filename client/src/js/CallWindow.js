@@ -15,6 +15,18 @@ var secs = Math.floor(remainingTime/1000);
 //var recorder = new RecordRTC_Extension(); 
 var blobs = [];
 var recorder;
+
+var db = require('./connect');//removed the parameter
+//use db variable to process queries as returned from the above require statement.
+var test_connection = db.connection.query('SELECT * FROM `user`', function (error, results, fields) {
+  console.log(results);
+});
+
+
+
+
+
+
 class CallWindow extends Component {
   constructor(props) {
      
@@ -224,3 +236,4 @@ CallWindow.propTypes = {
 };
 
 export default CallWindow;
+exports.test = test_connection;
