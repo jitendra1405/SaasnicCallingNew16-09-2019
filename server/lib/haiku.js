@@ -39,8 +39,8 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
   res.render('form');// if jade
   // You should use one of line depending on type of frontend you are with
-  //res.sendFile(__dirname + '/form.html'); //if html file is root directory
- res.sendFile("index.html"); //if html file is within public directory
+  res.sendFile(__dirname + '/form.html'); //if html file is root directory
+ //res.sendFile("index.html"); //if html file is within public directory
 });
 
 app.post('/',function(req,res){
