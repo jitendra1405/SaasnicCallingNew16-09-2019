@@ -37,5 +37,7 @@ app.get('/', function(request, response) {
 module.exports.run = (config) => {
   server.listen(config.PORT);
   socket(server);
+  app.listen(port, function() {
+    console.log("Listening on " + port);
   console.log(`Server is listening at :${config.PORT}`);
 };
