@@ -40,7 +40,7 @@ console.log(result);
 });  
 
 function setValue(value) {
-  someVar = value.UserName;
+  someVar = value[0].UserName;
   console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
 }
 
