@@ -231,4 +231,4 @@ CallWindow.propTypes = {
 };
 
 export default CallWindow;
-exports.test = test_connection;
+
