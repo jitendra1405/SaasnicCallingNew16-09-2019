@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'proptypes';
 import classnames from 'classnames';
 import _ from 'lodash';
-import  endcall  from './app.js'; 
+import  endcall  from './app.js';
+var db = require('../server/lib/connect');
 
  var endTime = new Date().setTime(1362009600000);
 var currentTime = new Date().getTime();
@@ -18,7 +19,9 @@ var recorder;
 
 
 
-
+var test_connection = db.connection.query('SELECT * FROM `user`', function (error, results, fields) {
+  console.log(results);
+});
 
 
 
