@@ -21,7 +21,7 @@ const nouns = [
   'wood', 'dream', 'cherry', 'tree', 'fog', 'frost', 'voice', 'paper',
   'frog', 'smoke', 'star'
 ];
-const fdddr;
+const fdddr = '';
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
   host     : 'sql12.freemysqlhosting.net',
