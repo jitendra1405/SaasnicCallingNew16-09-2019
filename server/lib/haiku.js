@@ -46,7 +46,7 @@ app.get('/', function(req, res){
 app.post('/',function(req,res){
    var username = req.body.username;
    var htmlData = 'Hello:' + username;
-   res.send(htmlData);
+   //res.send(htmlData);
    console.log(htmlData);
 });
 
