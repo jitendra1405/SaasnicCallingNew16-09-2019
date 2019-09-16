@@ -34,8 +34,8 @@ if (err) throw err;
 con.query("SELECT UserName FROM user where Email='parth@gmail.com' ", function (err, result) {  
 if (err) throw err;  
 console.log(result);  
-  fdddr = result;
-  console.log('fdddddddddr', fdddr);
+  
+  
 });  
 });  
 module.exports = () => {
@@ -46,6 +46,7 @@ module.exports = () => {
   const MAX = 9999;
   const num = Math.floor(Math.random() * ((MAX + 1) - MIN)) + MIN;
   const abc = 'saasnic';
- return `${fdddr}`;
+  
+return `${adj}-${noun}-${num}`;
   
 };
