@@ -21,7 +21,7 @@ const nouns = [
   'wood', 'dream', 'cherry', 'tree', 'fog', 'frost', 'voice', 'paper',
   'frog', 'smoke', 'star'
 ];
-const fdddr = '';
+var someVar = [];
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
   host     : 'sql12.freemysqlhosting.net',
@@ -34,10 +34,20 @@ if (err) throw err;
 con.query("SELECT UserName FROM user where Email='parth@gmail.com' ", function (err, result) {  
 if (err) throw err;  
 console.log(result);  
-  
+ setValue(result);
   
 });  
 });  
+
+function setValue(value) {
+  someVar = value;
+  console.log(someVar);
+}
+
+
+
+
+
 module.exports = () => {
   
   const adj = adjs[Math.floor(Math.random() * adjs.length)];
@@ -47,6 +57,6 @@ module.exports = () => {
   const num = Math.floor(Math.random() * ((MAX + 1) - MIN)) + MIN;
   const abc = 'saasnic';
   
-return `${adj}-${noun}-${num}`;
+return `${someVar}`;
   
 };
