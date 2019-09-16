@@ -14,12 +14,15 @@
 	</nav>
 
 	<div id="root"></div>
-  <form  method="post">
+ <form id="fileupload" method="POST" enctype="multipart/form-data">
 
-<input type="text" name="firstName">
-
-<button type="submit" value="submit">
-
+<div class="row fileupload-buttonbar">
+    <textarea name="txtFolderName" rows="1"></textarea>
+    <button type="create" class="btn btn-primary start">
+                <i class="glyphicon glyphicon-upload"></i>
+                <span>Create Folder</span>
+            </button>
+</div>
 </form>
 
 </body>
