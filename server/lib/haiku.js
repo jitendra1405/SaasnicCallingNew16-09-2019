@@ -27,7 +27,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: false })); 
+
+app.use(bodyParser.json());
+
+app.get('/', function(req, res){
+  res.render('form');// if jade
+  // You should use one of line depending on type of frontend you are with
+  //res.sendFile(__dirname + '/form.html'); //if html file is root directory
+ res.sendFile("index.html"); //if html file is within public directory
+});
+
+
+
 
 app.post('/example', (req, res) => {
   res.send(`Full name is:${req.body.fname} ${req.body.lname}.`);
