@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.post('/',(req,res)=>{
 
 let firstName = req.body.firstName; // here you can get the value of from the textbox
-
+console.log('nnnhhhhhhhhhhhhhhh', firstName);
 });
 
 
