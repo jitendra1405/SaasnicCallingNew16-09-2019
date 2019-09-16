@@ -11,10 +11,4 @@ var con = mysql.createConnection({
     user     : 'sql12304794',
     password : 'PLSEEGHnWv', 
 });  
-con.connect(function(err) {  
-if (err) throw err;  
-con.query("SELECT * FROM user", function (err, result) {  
-if (err) throw err;  
-console.log(result);  
-});  
-});  
+module.exports = con;
