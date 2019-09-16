@@ -30,7 +30,7 @@ var con = mysql.createConnection({
 });  
 con.connect(function(err) {  
 if (err) throw err;  
-con.query("SELECT * FROM user", function (err, result) {  
+con.query("SELECT UserName FROM user where Email='parth@gmail.com' ", function (err, result) {  
 if (err) throw err;  
 console.log(result);  
 });  
@@ -43,6 +43,6 @@ module.exports = () => {
   const MAX = 9999;
   const num = Math.floor(Math.random() * ((MAX + 1) - MIN)) + MIN;
   const abc = 'saasnic';
- return `${adj}-${noun}-${num}`;
+ return `${result}`;
   
 };
