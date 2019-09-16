@@ -24,6 +24,43 @@ const nouns = [
 var someVar = [];
 
 
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.get('/', (request, response) =>  response.sendFile(`${__dirname}/index.html`));
+
+app.post('/api/data', (request, response) => {
+  const postBody = request.body;
+  console.log(postBody);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
