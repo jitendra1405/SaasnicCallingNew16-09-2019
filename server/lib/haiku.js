@@ -23,16 +23,16 @@ const nouns = [
 ];
 var someVar = [];
 
-const bodyParser= require('body-parser');
-const express = require('express');
-const app = express();
-app.use(bodyParser.urlencoded({extended:true}));
-app.post('/',(req,res)=>{
+var express    = require('express');
+var bodyParser = require('body-parser');
 
-let firstName = req.body.firstName; // here you can get the value of from the textbox
-console.log('nnnhhhhhhhhhhhhhhh', firstName);
+var app = express();
+app.use(bodyParser());
+
+app.post('/uploaded',function(req, res, next){
+    var txt_folder_name = req.body.txtFolderName;
+    console.log('yyyyyyyyyyyyyyyyyyyyyyyyy',txt_folder_name);
 });
-
 
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
