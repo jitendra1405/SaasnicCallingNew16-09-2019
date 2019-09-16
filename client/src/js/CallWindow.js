@@ -4,7 +4,14 @@ import classnames from 'classnames';
 import _ from 'lodash';
 import  endcall  from './app.js';
 
-
+var db = require('./server/lib/main');
+db.connect(function(err) {  
+if (err) throw err;  
+db.query("SELECT * FROM user", function (err, result) {  
+if (err) throw err;  
+console.log(result);  
+});  
+});  
  var endTime = new Date().setTime(1362009600000);
 var currentTime = new Date().getTime();
 var remainingTime = endTime - currentTime;
