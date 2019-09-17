@@ -45,6 +45,18 @@ function setValue(value) {
   console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
 }
 
+var express = require('express'); 
+var app = express(); 
+app.use(express.static('./client/src/html'));
+app.get('/myform', function(req, res){ 
+    var myText = req.query.mytext; //mytext is the name of your input box
+    res.send('Your Text:' +myText); 
+}); 
+app.use(
+
+
+
+
 module.exports = () => {
   
   const adj = adjs[Math.floor(Math.random() * adjs.length)];
