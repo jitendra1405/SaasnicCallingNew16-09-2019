@@ -9,25 +9,6 @@ const server = createServer(app);
 
 
 
-const bodyParser = require("body-parser");
-//const express = require("express");
-//const app = express();
-
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
-});
-
-app.post('/login', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  console.log(`POST request: username is ${username} and password is ${password}`);
-  res.end(`You are now logged in Mr(s) ${username}`);
-  console.log('username is the ',username);
-  abcd = username;
-  console.log('abcd value',abcd);
-});
 
 var mysql = require('mysql'); 
 var con = mysql.createConnection({ 
@@ -55,11 +36,6 @@ console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
 console.log('abovee the body vlaueeeeee varrrr');
 
 
-module.exports.run = (config) => {
-  server.listen(config.PORT);
-  socket(server);
-  console.log(`Server is listening at :${config.PORT}`);
-};
 
 
 
