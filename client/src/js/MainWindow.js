@@ -3,11 +3,9 @@ import PropTypes from 'proptypes';
 
 let friendID;
 
-function callWithVideo123() {
-    console.log('loooooooooooooooooopppppppppppppppppp');
-  }
+
   
-<input type="button" value="cube" onclick="callWithVideo123()"/>  
+
 class MainWindow extends Component {
   /**
    * Start the call with or without video
