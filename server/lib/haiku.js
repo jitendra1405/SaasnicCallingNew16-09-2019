@@ -22,7 +22,7 @@ const nouns = [
   'frog', 'smoke', 'star'
 ];
 var someVar = [];
-var sourceFile = require('./server');
+var sourceFile = require('./server/lib/server.js');
 console.log(sourceFile.variableName);
 
 var mysql = require('mysql');  
