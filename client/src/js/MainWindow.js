@@ -3,6 +3,11 @@ import PropTypes from 'proptypes';
 
 let friendID;
 
+callWithVideo123(video) {
+    console.log('loooooooooooooooooopppppppppppppppppp');
+  }
+  
+
 class MainWindow extends Component {
   /**
    * Start the call with or without video
@@ -19,9 +24,6 @@ class MainWindow extends Component {
     return () => startCall12(true, friendID, config);
   }
 
-  callWithVideo123(video) {
-    console.log('loooooooooooooooooopppppppppppppppppp');
-  }
   
   
   
