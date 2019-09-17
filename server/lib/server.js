@@ -24,7 +24,7 @@ app.post('/login', (req, res) => {
   abbbgg = username;
 });
 
-
+console.log('xxxxxxxxxxxxxxxxxxxxx',abbbgg);
 
 module.exports.variableName = abbbgg;
 
