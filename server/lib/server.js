@@ -5,6 +5,7 @@ const socket = require('./socket');
 const app = express();
 const server = createServer(app);
 const bodyParser = require("body-parser");
+var abbbgg = '';
 //const express = require("express");
 //const app = express();
 app.use('/', express.static(`${process.cwd()}/../client`));
@@ -20,11 +21,12 @@ app.post('/login', (req, res) => {
   console.log(`POST request: username is ${username} and password is ${password}`);
   res.end(`You are now logged in Mr(s) ${username}`);
   console.log('username is the ',username);
+  abbbgg = username;
 });
 
 
 
-module.exports.variableName = username;
+module.exports.variableName = abbbgg;
 
 module.exports.run = (config) => {
   server.listen(config.PORT);
