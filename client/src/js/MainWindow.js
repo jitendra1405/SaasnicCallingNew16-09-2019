@@ -31,14 +31,13 @@ console.log('kdkdkdkdkdkdkddkdkdkdkdkdkdkkdkddk');
     document.title = `${clientId} - VideoCall`;
     return (
       <div className="container main-window">
-      <form>  
-Enter No:<input type="text" id="number" name="number"/><br/>  
+      
 <button
               type="button"
               className="btn-action fa fa-video-camera"
               onClick={this.getcube()}
             />
-</form>  
+
         <div>
           <h3>
             Hi, your ID is
