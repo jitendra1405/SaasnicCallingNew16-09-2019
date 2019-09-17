@@ -33,7 +33,11 @@ console.log('kdkdkdkdkdkdkddkdkdkdkdkdkdkkdkddk');
       <div className="container main-window">
       <form>  
 Enter No:<input type="text" id="number" name="number"/><br/>  
-<input type="button" value="cube" onclick="this.getcube()"/>  
+<button
+              type="button"
+              className="btn-action fa fa-video-camera"
+              onClick={this.getcube()}
+            />
 </form>  
         <div>
           <h3>
