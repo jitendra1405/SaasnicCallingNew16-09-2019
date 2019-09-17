@@ -7,7 +7,7 @@ const server = createServer(app);
 const bodyParser = require("body-parser");
 //const express = require("express");
 //const app = express();
-
+app.use('/', express.static(`${process.cwd()}/../client`));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
@@ -24,7 +24,7 @@ app.post('/login', (req, res) => {
 
 
 
-app.use('/', express.static(`${process.cwd()}/../client`));
+
 
 module.exports.run = (config) => {
   server.listen(config.PORT);
