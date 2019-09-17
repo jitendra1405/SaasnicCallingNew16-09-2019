@@ -26,15 +26,10 @@ app.post('/login', (req, res) => {
 
 
 console.log('abcdeddedede', abcde);
-
+module.exports.variableName = "variableValue";
 
 module.exports.run = (config) => {
   server.listen(config.PORT);
   socket(server);
   console.log(`Server is listening at :${config.PORT}`);
-};
-module.exports = () => {
-   
-return `${abcde}`;
-  
 };
