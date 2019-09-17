@@ -23,7 +23,7 @@ const nouns = [
 ];
 var someVar = [];
 
-
+var sourceFile = require('./server');
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
   host     : 'sql12.freemysqlhosting.net',
@@ -47,6 +47,7 @@ function setValue(value) {
 }
 
 
+console.log(sourceFile.variableName);
 
 
 module.exports = () => {
