@@ -10,7 +10,7 @@ const bodyParser = require("body-parser");
 //const app = express();
 app.use('/', express.static(`${process.cwd()}/../client`));
 app.use(bodyParser.urlencoded({ extended: false }));
-var abcde = '';
+var abcde;
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/index.html`);
 });
@@ -25,7 +25,7 @@ app.post('/login', (req, res) => {
 });
 
 
-
+console.log('abcdeddedede', abcde);
 
 
 module.exports.run = (config) => {
