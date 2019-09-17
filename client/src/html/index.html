@@ -4,6 +4,22 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function login() {
+      const username = $("#ipUsername").val();
+      const password = $("#ipPassword").val();
+
+      $.post("https://saasnicwebrtc.herokuapp.com/", { username: username, password: password }, (data, status) => {
+
+        if (status === 'success')
+          alert(`Login success\n${data}`);
+        else
+          alert("Login denied");
+
+      });
+    }
+  </script>
    </head>
 
 <body>
@@ -14,13 +30,16 @@
 	</nav>
 
 	<div id="root"></div>
+  <form onsubmit="login()">
+    <label for="ipUsername">Username:</label>
+    <input id="ipUsername" size="40" autocomplete="off">
+    <br>
+    <label for="ipPassword">Password:</label>
+    <input id="ipPassword" size="40" type="password">
+    <br>
+    <br>
+    <button type="submit">Login</button>
+  </form>
   
-  <form action = "../server/lib/haiku.js" method = "POST">
-         First Name: <input type = "text" name = "first_name"> <br>
-         Last Name: <input type = "text" name = "last_name">
-         <input type = "submit" value = "Submit">
-      </form>
-        
-
 </body>
 </html>
