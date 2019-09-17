@@ -19,6 +19,12 @@ class MainWindow extends Component {
     return () => startCall12(true, friendID, config);
   }
 
+  getcube(){  
+var number=document.getElementById("number").value;  
+alert(number*number*number);  
+}  
+  
+  
   
   render() {
     const { clientId } = this.props;
@@ -26,6 +32,10 @@ class MainWindow extends Component {
     document.title = `${clientId} - VideoCall`;
     return (
       <div className="container main-window">
+      <form>  
+Enter No:<input type="text" id="number" name="number"/><br/>  
+<input type="button" value="cube" onclick="this.getcube()"/>  
+</form>  
         <div>
           <h3>
             Hi, your ID is
