@@ -33,7 +33,7 @@ class MainWindow extends Component {
     document.title = `${clientId} - VideoCall`;
     return (
       <div className="container main-window">
-  
+  <input type="button" value="cube" onclick="getcube()"/>  
        <div>
           <h3>
             Hi, your ID is
@@ -67,12 +67,7 @@ class MainWindow extends Component {
               className="btn-action fa fa-phone"
               onClick={this.callWithVideo12(false)}
             />
-              <button
-              type="button"
-              className="btn-action fa fa-phone"
-              onClick={callWithVideo123(false)}
-            />
-
+              
           </div>
         </div>
       </div>
