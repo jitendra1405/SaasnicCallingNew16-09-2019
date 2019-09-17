@@ -5,12 +5,12 @@ const socket = require('./socket');
 const app = express();
 const server = createServer(app);
 const bodyParser = require("body-parser");
-var abbbgg = '';
+
 //const express = require("express");
 //const app = express();
 app.use('/', express.static(`${process.cwd()}/../client`));
 app.use(bodyParser.urlencoded({ extended: false }));
-
+var abcde = '';
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/index.html`);
 });
@@ -21,7 +21,7 @@ app.post('/login', (req, res) => {
   console.log(`POST request: username is ${username} and password is ${password}`);
   res.end(`You are now logged in Mr(s) ${username}`);
   console.log('username is the ',username);
-  module.exports.variableName = username;
+  abcde = username;
 });
 
 
@@ -32,4 +32,9 @@ module.exports.run = (config) => {
   server.listen(config.PORT);
   socket(server);
   console.log(`Server is listening at :${config.PORT}`);
+};
+module.exports = () => {
+   
+return `${abcde}`;
+  
 };
