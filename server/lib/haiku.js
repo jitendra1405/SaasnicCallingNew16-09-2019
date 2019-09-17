@@ -23,6 +23,27 @@ const nouns = [
 ];
 var someVar = [];
 
+
+var express = require('express');
+var app = express();
+
+app.use(express.static('public'));
+
+app.get('/', function (req, res) {
+   res.send('Hello World');
+})
+
+var server = app.listen(8081, function () {
+   var host = server.address().address
+   var port = server.address().port
+
+   console.log("Example app listening at http://%s:%s", host, port)
+})
+
+
+
+
+
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
   host     : 'sql12.freemysqlhosting.net',
@@ -44,14 +65,6 @@ function setValue(value) {
   someVar = value[0].UserName;
   console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
 }
-
-var express = require('express'); 
-var app = express(); 
-app.use(express.static('./client'));
-app.get('/myform', function(req, res){ 
-    var myText = req.query.mytext; //mytext is the name of your input box
-    res.send('Your Text:' +myText); 
-}); 
 
 
 
