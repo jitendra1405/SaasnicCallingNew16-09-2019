@@ -22,11 +22,12 @@ app.post('/login', (req, res) => {
   res.end(`You are now logged in Mr(s) ${username}`);
   console.log('username is the ',username);
   abcde = username;
+  module.exports.variableName = "variableValue";
 });
 
 
 console.log('abcdeddedede', abcde);
-module.exports.variableName = "variableValue";
+
 
 module.exports.run = (config) => {
   server.listen(config.PORT);
