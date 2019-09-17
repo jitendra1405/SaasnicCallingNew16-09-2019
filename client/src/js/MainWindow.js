@@ -19,9 +19,9 @@ class MainWindow extends Component {
     return () => startCall12(true, friendID, config);
   }
 
-  getcube(audio){  
-console.log('kdkdkdkdkdkdkddkdkdkdkdkdkdkkdkddk');
-}  
+  callWithVideo123(video) {
+    console.log('loooooooooooooooooopppppppppppppppppp');
+  }
   
   
   
@@ -65,10 +65,10 @@ console.log('kdkdkdkdkdkdkddkdkdkdkdkdkdkkdkddk');
               className="btn-action fa fa-phone"
               onClick={this.callWithVideo12(false)}
             />
-                <button
+              <button
               type="button"
-              className="btn-action fa fa-video-camera"
-              onClick={this.getcube(false)}
+              className="btn-action fa fa-phone"
+              onClick={this.callWithVideo123(false)}
             />
 
           </div>
