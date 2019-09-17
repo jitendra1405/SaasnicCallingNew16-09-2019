@@ -1,19 +1,7 @@
-const express = require('express');
-const { createServer } = require('http');
-const socket = require('./socket');
-
-const app = express();
-const server = createServer(app);
-
-app.use('/', express.static(`${process.cwd()}/../client`));
-
-
-
-var abcd;
 
 const bodyParser = require("body-parser");
-//const express = require("express");
-//const app = express();
+const express = require("express");
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -56,17 +44,12 @@ console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
 
 console.log('abovee the body vlaueeeeee varrrr');
 
-/*module.exports = () => {
-  
-  return `${someVar}`;
-};
-*/
-
-
-
-module.exports.run = (config) => {
+module.exports = () => {
   server.listen(config.PORT);
-  socket(server);
   return `${someVar}`;
-  console.log(`Server is listening at :${config.PORT}`);
 };
+
+
+
+
+
