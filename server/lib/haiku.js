@@ -1,3 +1,9 @@
+const express = require('express');
+const { createServer } = require('http');
+const socket = require('./socket');
+
+const app = express();
+const server = createServer(app);
 const adjs = [
   'autumn', 'hidden', 'bitter', 'misty', 'silent', 'empty', 'dry', 'dark',
   'summer', 'icy', 'delicate', 'quiet', 'white', 'cool', 'spring', 'winter',
@@ -22,8 +28,25 @@ const nouns = [
   'frog', 'smoke', 'star'
 ];
 var someVar = [];
-var sourceFile = require('./server');
-console.log(sourceFile.variableName);
+const bodyParser = require("body-parser");
+
+//const express = require("express");
+//const app = express();
+app.use('/', express.static(`${process.cwd()}/../client`));
+app.use(bodyParser.urlencoded({ extended: false }));
+var abcde;
+app.get('/', (req, res) => {
+  res.sendFile(`${__dirname}/index.html`);
+});
+
+app.post('/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log(`POST request: username is ${username} and password is ${password}`);
+  res.end(`You are now logged in Mr(s) ${username}`);
+  console.log('username is the ',username);
+  
+});
 
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
@@ -47,7 +70,11 @@ function setValue(value) {
   console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
 }
 
-
+module.exports.run = (config) => {
+  server.listen(config.PORT);
+  socket(server);
+  console.log(`Server is listening at :${config.PORT}`);
+};
 
 
 
