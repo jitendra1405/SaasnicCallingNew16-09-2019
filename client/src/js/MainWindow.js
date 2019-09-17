@@ -19,7 +19,7 @@ class MainWindow extends Component {
     return () => startCall12(true, friendID, config);
   }
 
-  getcube(){  
+  getcube(audio){  
 console.log('kdkdkdkdkdkdkddkdkdkdkdkdkdkkdkddk');
 }  
   
@@ -31,14 +31,8 @@ console.log('kdkdkdkdkdkdkddkdkdkdkdkdkdkkdkddk');
     document.title = `${clientId} - VideoCall`;
     return (
       <div className="container main-window">
-      
-<button
-              type="button"
-              className="btn-action fa fa-video-camera"
-              onClick={this.getcube()}
-            />
-
-        <div>
+  
+       <div>
           <h3>
             Hi, your ID is
             <input
@@ -71,6 +65,12 @@ console.log('kdkdkdkdkdkdkddkdkdkdkdkdkdkkdkddk');
               className="btn-action fa fa-phone"
               onClick={this.callWithVideo12(false)}
             />
+                <button
+              type="button"
+              className="btn-action fa fa-video-camera"
+              onClick={this.getcube(false)}
+            />
+
           </div>
         </div>
       </div>
