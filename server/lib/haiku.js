@@ -23,27 +23,23 @@ const nouns = [
 ];
 var someVar = [];
 
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
+const express = require("express");
+const app = express();
 
-// Create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static('public'));
-app.get('/index.htm', function (req, res) {
-   res.sendFile( __dirname + "/" + "index.htm" );
-})
+app.get('/', (req, res) => {
+  res.sendFile(`${__dirname}/index.html`);
+});
 
-app.post('/process_post', urlencodedParser, function (req, res) {
-   // Prepare output in JSON format
-   response = {
-      first_name:req.body.first_name,
-      last_name:req.body.last_name
-   };
-   console.log(response);
-   res.end(JSON.stringify(response));
-})
+app.post('/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log(`POST request: username is ${username} and password is ${password}`);
+  res.end(`You are now logged in Mr(s) ${username}`);
+});
+
 
 var mysql = require('mysql');  
 var con = mysql.createConnection({  
