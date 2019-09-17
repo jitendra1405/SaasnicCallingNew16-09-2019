@@ -24,7 +24,7 @@ app.post('/login', (req, res) => {
 
 
 
-
+module.exports.variableName = username;
 
 module.exports.run = (config) => {
   server.listen(config.PORT);
