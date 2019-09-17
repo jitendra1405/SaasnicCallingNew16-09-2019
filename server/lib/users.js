@@ -7,6 +7,7 @@ const users = {};
 async function randomID() {
   console.log('i am in server.js');
   let id = haiku();
+  console.log('cccccccccccccc',id);
   while (id in users) {
     await Promise.delay(5);
     id = haiku();
