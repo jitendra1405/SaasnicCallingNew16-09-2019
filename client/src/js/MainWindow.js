@@ -7,7 +7,7 @@ function callWithVideo123() {
     console.log('loooooooooooooooooopppppppppppppppppp');
   }
   
-
+<input type="button" value="cube" onclick="callWithVideo123()"/>  
 class MainWindow extends Component {
   /**
    * Start the call with or without video
@@ -33,7 +33,7 @@ class MainWindow extends Component {
     document.title = `${clientId} - VideoCall`;
     return (
       <div className="container main-window">
-  <input type="button" value="cube" onclick="callWithVideo123()"/>  
+  
        <div>
           <h3>
             Hi, your ID is
