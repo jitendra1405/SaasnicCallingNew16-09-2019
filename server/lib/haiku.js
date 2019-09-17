@@ -4,6 +4,78 @@ const socket = require('./socket');
 
 const app = express();
 const server = createServer(app);
+
+app.use('/', express.static(`${process.cwd()}/../client`));
+
+module.exports.run = (config) => {
+  server.listen(config.PORT);
+  socket(server);
+  console.log(`Server is listening at :${config.PORT}`);
+};
+
+var abcd;
+
+const bodyParser = require("body-parser");
+//const express = require("express");
+//const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.get('/', (req, res) => {
+  res.sendFile(`${__dirname}/index.html`);
+});
+
+app.post('/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log(`POST request: username is ${username} and password is ${password}`);
+  res.end(`You are now logged in Mr(s) ${username}`);
+  console.log('username is the ',username);
+  abcd = username;
+  console.log('abcd value',abcd);
+});
+
+//module.exports = { abcde: abcd };
+//module.exports.vari = abcd;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const adjs = [
   'autumn', 'hidden', 'bitter', 'misty', 'silent', 'empty', 'dry', 'dark',
   'summer', 'icy', 'delicate', 'quiet', 'white', 'cool', 'spring', 'winter',
@@ -27,66 +99,43 @@ const nouns = [
   'wood', 'dream', 'cherry', 'tree', 'fog', 'frost', 'voice', 'paper',
   'frog', 'smoke', 'star'
 ];
-var someVar = [];
-const bodyParser = require("body-parser");
 
-//const express = require("express");
-//const app = express();
-app.use('/', express.static(`${process.cwd()}/../client`));
-app.use(bodyParser.urlencoded({ extended: false }));
-var abcde;
-app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
-});
 
-app.post('/login', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  console.log(`POST request: username is ${username} and password is ${password}`);
-  res.end(`You are now logged in Mr(s) ${username}`);
-  console.log('username is the ',username);
-  
-});
 
-var mysql = require('mysql');  
-var con = mysql.createConnection({  
-  host     : 'sql12.freemysqlhosting.net',
-    database : 'sql12304794',
-    user     : 'sql12304794',
-    password : 'PLSEEGHnWv', 
-});  
-con.connect(function(err) {  
-if (err) throw err;  
-con.query("SELECT UserName FROM user where Email='parth@gmail.com' limit 1 ", function (err, result) {  
-if (err) throw err;  
-console.log(result);  
- setValue(result);
-  
-});  
-});  
+var mysql = require('mysql'); 
+var con = mysql.createConnection({ 
+host : 'sql12.freemysqlhosting.net',
+database : 'sql12304794',
+user : 'sql12304794',
+password : 'PLSEEGHnWv', 
+}); 
+con.connect(function(err) { 
+if (err) throw err; 
+con.query("SELECT UserName FROM user where email='parth@gmail.com' limit 1 ", function (err, result) { 
+if (err) throw err; 
+console.log(result); 
+setValue(result);
+
+}); 
+}); 
 
 function setValue(value) {
-  someVar = value[0].UserName;
-  console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
+someVar = value[0].UserName;
+console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
 }
 
-module.exports.run = (config) => {
-  server.listen(config.PORT);
-  socket(server);
-  console.log(`Server is listening at :${config.PORT}`);
-};
+
+console.log('abovee the body vlaueeeeee varrrr');
+
 
 
 
 module.exports = () => {
-  
   const adj = adjs[Math.floor(Math.random() * adjs.length)];
   const noun = nouns[Math.floor(Math.random() * nouns.length)];
   const MIN = 1000;
   const MAX = 9999;
   const num = Math.floor(Math.random() * ((MAX + 1) - MIN)) + MIN;
-  const abc = 'saasnic';
-  
-return `${someVar}`;
-  
+
+  return `${someVar}`;
 };
