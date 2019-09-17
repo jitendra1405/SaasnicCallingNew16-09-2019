@@ -3,7 +3,7 @@ import PropTypes from 'proptypes';
 
 let friendID;
 
-function callWithVideo123(video) {
+function callWithVideo123() {
     console.log('loooooooooooooooooopppppppppppppppppp');
   }
   
@@ -33,7 +33,7 @@ class MainWindow extends Component {
     document.title = `${clientId} - VideoCall`;
     return (
       <div className="container main-window">
-  <input type="button" value="cube" onclick="getcube()"/>  
+  <input type="button" value="cube" onclick="callWithVideo123()"/>  
        <div>
           <h3>
             Hi, your ID is
