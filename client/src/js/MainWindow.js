@@ -3,7 +3,7 @@ import PropTypes from 'proptypes';
 
 let friendID;
 
-callWithVideo123(video) {
+function callWithVideo123(video) {
     console.log('loooooooooooooooooopppppppppppppppppp');
   }
   
@@ -70,7 +70,7 @@ class MainWindow extends Component {
               <button
               type="button"
               className="btn-action fa fa-phone"
-              onClick={this.callWithVideo123(false)}
+              onClick="callWithVideo123(false)"
             />
 
           </div>
