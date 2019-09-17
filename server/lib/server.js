@@ -1,4 +1,4 @@
-/*const express = require('express');
+const express = require('express');
 const { createServer } = require('http');
 const socket = require('./socket');
 
@@ -12,4 +12,4 @@ module.exports.run = (config) => {
   server.listen(config.PORT);
   socket(server);
   console.log(`Server is listening at :${config.PORT}`);
-};*/
+};
