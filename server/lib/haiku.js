@@ -1,3 +1,13 @@
+const express = require('express');
+const { createServer } = require('http');
+const socket = require('./socket');
+
+const app = express();
+const server = createServer(app);
+
+
+
+
 
 const bodyParser = require("body-parser");
 const express = require("express");
@@ -44,8 +54,17 @@ console.log('nnnnnnnnnnnnnnnnnnnnnnn',someVar);
 
 console.log('abovee the body vlaueeeeee varrrr');
 
-module.exports = () => {
+
+module.exports.run = (config) => {
   server.listen(config.PORT);
+  socket(server);
+  console.log(`Server is listening at :${config.PORT}`);
+};
+
+
+
+module.exports = () => {
+  
   return `${someVar}`;
 };
 
