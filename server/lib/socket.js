@@ -1,11 +1,11 @@
-/*const io = require('socket.io');
+const io = require('socket.io');
 const users = require('./users');
 
 /**
  * Initialize when a connection is made
  * @param {SocketIO.Socket} socket
  */
-/*function initSocket(socket) {
+function initSocket(socket) {
   let id;
   socket
     .on('init', async () => {
@@ -42,4 +42,4 @@ module.exports = (server) => {
   io
     .listen(server, { log: true })
     .on('connection', initSocket);
-};*/
+};
